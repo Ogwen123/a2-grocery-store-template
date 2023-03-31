@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/global.js"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+                @apply font-extrabold;
+                @apply text-4xl;
+            }
+            h2 {
+                @apply font-bold;
+                @apply text-3xl;
+            }
+            h3 {
+                @apply font-semibold;
+                @apply text-2xl;
+            }
+            h4 {
+                @apply font-medium;
+                @apply text-xl;
+            }
+            h5 {
+                @apply font-normal;
+                @apply text-lg;
+            }
+            h6 {
+                @apply font-light;
+                @apply text-base;
+            }
+            a {
+                @apply text-blue-900;
+                @apply underline;
+                @apply hover:text-blue-700;
+                @apply hover:no-underline;
+                @apply visited:text-pink-900;
+            }
+            hr {
+                @apply border-2;
+                @apply rounded-full;
+                @apply border-gray-300;
+                @apply mt-4;
+                @apply mb-4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Paragraph</p>
+    <h1><a href="/test">Click here for a quick tutorial</a></h1>
+    <p>When creating new pages, duplicate this page (including all the stuff in the head tag)</p>
+</body>
+
+</html>

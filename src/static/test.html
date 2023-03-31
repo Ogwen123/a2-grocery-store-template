@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/global.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/global.js"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+                @apply font-extrabold;
+                @apply text-4xl;
+            }
+            h2 {
+                @apply font-bold;
+                @apply text-3xl;
+            }
+            h3 {
+                @apply font-semibold;
+                @apply text-2xl;
+            }
+            h4 {
+                @apply font-medium;
+                @apply text-xl;
+            }
+            h5 {
+                @apply font-normal;
+                @apply text-lg;
+            }
+            h6 {
+                @apply font-light;
+                @apply text-base;
+            }
+            a {
+                @apply text-blue-900;
+            }
+            hr {
+                @apply border-2;
+                @apply rounded-full;
+                @apply border-gray-300;
+                @apply mt-4;
+                @apply mb-4;
+            }
+        }
+    </style>
+    <script>
+        fetch("/api/test")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("change-me").innerHTML = data["data"];
+            });
+    </script>
+</head>
+
+<body>
+    <h1>Test Page</h1>
+    <p>This page serves no purpose and can be deleted</p>
+    <p>Before you do, try playing around with it</p>
+    <p>The following text is displayed based on whatever the API returns. Try modify what the API returns by editing the file /src/api/test/main.py</p>
+    <p>Then, refresh the page to see the changes</p>
+    <center><h1 id="change-me"></h1></center>
+    <h2>How does that work?</h2>
+    <p>When the page loads, it makes a request to the API. The API returns a JSON object with a key called "data". The value of that key is displayed on the page.</p>
+    <p>You can think of a JSON object as a Python dictionary</p>
+    <p>To see this in action, click F12 and open the network tab, then press F5.</p>
+    <i><h6>(make sure you are not logged in to your Hwb account, try incognito)</h6></i>
+    <img src="/other/test-networktab-1.png" alt="Network tab">
+    <p>The highlighted request is the one we are interested in!</p>
+    <hr>
+    <p>If you can't find it, right click the "name" tab at the top, then enable "path" and look for a value called "/api/test"</p>
+    <p>Click on it to see the response</p>
+    <img src="/other/test-networktab-2.png" alt="Network tab">
+    <p>Here we can see the structure of the response from the API, including the headers</p>
+    <i><h6>(this is also shown in section 0.1.2 of the help guide)</h6></i>
+    <hr>
+    <p>This data is not very useful, so visit the 'Response' tab</p>
+    <img src="/other/test-networktab-3.png" alt="Network tab">
+    <p>Here we can see the JSON object (similar to a python dictionary) that the API returned</p>
+    <p>The key that this web page reads is called 'data'</p>
+    <p>Try changing it by editing /src/api/test/main.py and refreshing!</p>
+</body>
+
+</html>

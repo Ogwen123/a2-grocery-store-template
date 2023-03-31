@@ -1,12 +1,20 @@
 from flask import Flask, send_file, request
 import json
+from api.main import api_bp
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="/")
+app.register_blueprint(api_bp)
 
-#serve static html
+#TODO mysql and config
+
 @app.route("/")
-def add():
-    return send_file("../static/pages/index.html")
+def home():
+    return send_file("static/index.html")
+
+@app.route("/test")
+def test():
+    return send_file("static/test.html")
+# add more pages here...
 
 if __name__ == '__main__':
     app.run(
