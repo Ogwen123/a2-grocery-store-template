@@ -7,6 +7,14 @@ app.register_blueprint(api_bp)
 
 #TODO mysql and config
 
+def connect():
+    return mysql.connector.connect(
+        host="localhost",
+        database="grocery_store",
+        user="root",
+        password="password here"
+        )
+
 @app.route("/")
 def home():
     return send_file("static/index.html")
