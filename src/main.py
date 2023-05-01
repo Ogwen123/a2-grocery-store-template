@@ -1,19 +1,14 @@
 from flask import Flask, send_file, request
 import json
 from api.main import api_bp
+from db import connect
 
 app = Flask(__name__, static_folder="static", static_url_path="/")
 app.register_blueprint(api_bp)
 
-#TODO mysql and config
+CONFIG = json.load(open("config.json", "r"))
 
-def connect():
-    return mysql.connector.connect(
-        host="localhost",
-        database="grocery_store",
-        user="root",
-        password="password here"
-        )
+connect()
 
 @app.route("/")
 def home():
