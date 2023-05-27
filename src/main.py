@@ -14,10 +14,10 @@ connect()
 def home():
     return send_file("static/index.html")
 
-@app.route("/test")
-def test():
-    return send_file("static/test.html")
-# add more pages here...
+@app.route("/test") # this is the url you visit in the browser: http://localhost:5000/test
+def test(): # this is the function name, it doesnt matter what it is, but it MUST BE UNIQUE
+    return send_file("static/test.html") # this is the path to the html file that is served
+# add more pages here by copy pasting above...
 
 if __name__ == '__main__':
     app.run(
